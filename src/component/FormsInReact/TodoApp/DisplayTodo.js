@@ -4,8 +4,9 @@ import "./todo.css";
 const DisplayTodo = (props)=>{
     const [isEditing, setIsEditing] = useState(false);
     const [editTask, setEditTask] = useState(props.task);
-    const [color, setColor]=useState("")
-    const toggleEdit = ()=>{
+    const [color, setColor] = useState("")
+
+    const toggleEdit = () => {
         setIsEditing(true)
     }
     const handleUpdate = (e)=>{
@@ -29,7 +30,7 @@ const DisplayTodo = (props)=>{
             result = (
                 <div>
                     <form onSubmit={handleUpdate}>
-                        <input value={editTask} name="task" onChange={handleEditChange}/>
+                        <input value={editTask} name="task" onChange={handleEditChange} autoFocus/>
                         <button type="submit">Edit Task</button>
                     </form>
                 </div>

@@ -17,12 +17,20 @@ import Form from "./component/FormsInReact/form";
 import Item from "./component/FormsInReact/FormPractise/item";
 import Boxx from "./component/FormsInReact/ColorBox/boxx";
 import TodoList from "./component/FormsInReact/TodoApp/TodoList";
+import DeckCard from "./component/ServerRendering/deckCard";
+import Note from "./component/FormsInReact/Notes/note";
+import NewCard from "./component/FormsInReact/CardClass/newCard";
+import Card from "./component/FormsInReact/CardClass/card";
+import Expense from "./component/FormsInReact/ExpenseTracker/expense";
 function App() {
     return (
         <>
-            <Item/>
-            <Boxx/>
-            <TodoList/>
+            <Card/>
+            <Expense/>
+            {/*<Item/>*/}
+            {/*<Boxx/>*/}
+            {/*<TodoList/>*/}
+            {/*<Note/>*/}
                 {/*<Form/>*/}
             {/*<Box/>*/}
             {/*<FlipCoin/>*/}

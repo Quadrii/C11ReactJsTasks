@@ -20,7 +20,7 @@ const TodoList = ()=>{
 
 
     const update=(id, updatedTask) => {
-       let update = todos.map(todo =>
+       let updatedTodo = todos.map(todo =>
            {
                if (todo.id === id){
                    return {...todo, task: updatedTask}
@@ -29,10 +29,10 @@ const TodoList = ()=>{
                }
            }
        )
-        setInitialTodos(update)
+        setInitialTodos(updatedTodo)
     }
 
-    const remove = (id)=>{
+    const removeTodo = (id)=>{
         let deleteTodo = initialTodos.filter(initials => initials.id !== id)
         setInitialTodos(deleteTodo)
     }
@@ -53,7 +53,7 @@ const TodoList = ()=>{
     return (
         <>
             {initialTodos.map(initialTodo =>
-                <DisplayTodo task={initialTodo.task} key={initialTodo.id} id={initialTodo.id} removeTodo={remove}  updateTodo={update} completed={initialTodo.completed} isComplete={toggleComplete}/>
+                <DisplayTodo task={initialTodo.task} key={initialTodo.id} id={initialTodo.id} removeTodo={removeTodo}  updateTodo={update} completed={initialTodo.completed} isComplete={toggleComplete}/>
             )}
             <AddTodoForm addATask={addNewTask}/>
         </>

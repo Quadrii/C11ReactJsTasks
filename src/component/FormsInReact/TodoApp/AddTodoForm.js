@@ -8,7 +8,7 @@ const AddTodoForm = (props)=>{
     const handleTaskSubmit = (e)=>{
         e.preventDefault()
         props.addATask({task: todoTask, id:uuid(), completed:false});
-        setTodoTask(" ")
+        setTodoTask("")
     }
     return (
         <>
