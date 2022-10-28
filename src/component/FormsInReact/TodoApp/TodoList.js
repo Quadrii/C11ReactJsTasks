@@ -14,7 +14,7 @@ const TodoList = ()=>{
 
     const addNewTask = (newTask)=>{
         let newTodo = {...newTask, id:uuid()}
-        let copyTodo = [...todos, newTodo]
+        let copyTodo = [...initialTodos, newTodo]
         setInitialTodos(copyTodo)
     }
 
@@ -38,7 +38,7 @@ const TodoList = ()=>{
     }
 
     const toggleComplete = (id) => {
-        let update = todos.map(todo =>
+        let status = initialTodos.map(todo =>
             {
                 if (todo.id === id){
                     return {...todo, completed: !todo.completed}
@@ -47,13 +47,13 @@ const TodoList = ()=>{
                 }
             }
         )
-        setInitialTodos(update)
+        setInitialTodos(status)
     }
 
     return (
         <>
             {initialTodos.map(initialTodo =>
-                <DisplayTodo task={initialTodo.task} key={initialTodo.id} id={initialTodo.id} removeTodo={removeTodo}  updateTodo={update} completed={initialTodo.completed} isComplete={toggleComplete}/>
+                <DisplayTodo task={initialTodo.task} key={initialTodo.id} id={initialTodo.id} removeTodo={removeTodo} updateTodo={update} completed={initialTodo.completed} isComplete={toggleComplete}/>
             )}
             <AddTodoForm addATask={addNewTask}/>
         </>

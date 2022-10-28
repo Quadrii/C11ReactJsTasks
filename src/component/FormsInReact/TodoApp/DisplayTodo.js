@@ -4,7 +4,6 @@ import "./todo.css";
 const DisplayTodo = (props)=>{
     const [isEditing, setIsEditing] = useState(false);
     const [editTask, setEditTask] = useState(props.task);
-    const [color, setColor] = useState("")
 
     const toggleEdit = () => {
         setIsEditing(true)
@@ -21,7 +20,7 @@ const DisplayTodo = (props)=>{
     const handleEditChange = (e)=>{
         setEditTask(e.target.value)
     }
-    const handleToggle = ()=>{
+    const handleToggle = () => {
         props.isComplete(props.id)
     }
     const render = ()=>{
@@ -39,9 +38,10 @@ const DisplayTodo = (props)=>{
         else {
             result =(
                 <li>
-                    <span className={props.completed ? "completed" : " "} onClick={handleToggle}>
+                    <span className={props.completed ? "completed" : " "}>
                         {props.task}
                     </span>
+                    <Button clicks={handleToggle} text="completed"/>
                     <Button clicks={toggleEdit} text="Edit"/>
                     <Button clicks={handleDelete} text="Delete"/>
                 </li>

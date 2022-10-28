@@ -5,14 +5,15 @@ const deckUrl = "https://deckofcardsapi.com/api/deck/new/shuffle/"
 const DeckCard = ()=>{
     const [deck, setDeck] = useState();
     const [deckId, setDeckId] = useState("")
-    useEffect(
-        async ()=>{
-            let getCardData = await axios.get(deckUrl);
-            let response = getCardData.data
-            setDeck(response)
-        }, [deck]
+    useEffect(()=> {
+        async function getCardData () {
+            let response = await axios.get(deckUrl)
+            setDeck(response.data)
+          }
+          getCardData();
+        },[]
     )
-    // const getCard = async ()=>{
+    // const getCard = ()=>{
     //     let deckEyeDee = deck.deck_id
     //     let getCradUrl = `https://deckofcardsapi.com/api/deck/${deck_id}/draw/`
     //     let getSingleCard = await axios.get(getCradUrl)

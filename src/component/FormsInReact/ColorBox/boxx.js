@@ -27,7 +27,6 @@ const Boxx = ()=>{
                 {initialBox.map(box=>
                     <DisplayFormBox id={box.id} key={box.id} heightVal={box.height} widthVal={box.width} color={box.color} removeBox={remove}/>
                 )}
-
             </ul>
             <FormBox createBox={addBox}/>
         </>

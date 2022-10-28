@@ -14,13 +14,13 @@ const Card = ()=>{
         }
     ]
 
-    const [cardDetails, setcardDetails] = useState(cardData)
+    const [cardDetails, setCardDetails] = useState(cardData)
     return (
         <>
             {cardDetails.map(detail=>
                 <ShowCard id={detail.id} key={detail.id} cardTitle={detail.title} description={detail.description} image={detail.image}/>
             )}
-            <NewCard newSetData={setcardDetails}/>
+            <NewCard newSetData={setCardDetails}/>
         </>
     )
 }
