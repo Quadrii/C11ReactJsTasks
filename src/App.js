@@ -17,7 +17,7 @@ import Form from "./component/FormsInReact/form";
 import Item from "./component/FormsInReact/FormPractise/item";
 import Boxx from "./component/FormsInReact/ColorBox/boxx";
 import TodoList from "./component/FormsInReact/TodoApp/TodoList";
-import DeckCard from "./component/ServerRendering/deckCard";
+import DeckCard from "./component/ServerRendering/DeckCard/deckCard";
 import Note from "./component/FormsInReact/Notes/note";
 import NewCard from "./component/FormsInReact/CardClass/newCard";
 import Card from "./component/FormsInReact/CardClass/card";
@@ -33,38 +33,10 @@ import Product from "./component/ReactProps-States/displayingData/product";
 
 function App() {
     return (
-        <>
-            <DisplayModal/>
-            <Product/>
-            {/*<TodoList/>*/}
-            {/*<User/>*/}
 
-            {/*<SearchWrap/>*/}
-            {/*<Card/>*/}
-            {/*<Expense/>*/}
-            {/*<Todo/>*/}
-            {/*<Item/>*/}
-            {/*<Boxx/>*/}
-            {/*<TodoList/>*/}
-            {/*<Note/>*/}
-                {/*<Form/>*/}
-            {/*<Box/>*/}
-            {/*<FlipCoin/>*/}
-            {/*<Counter step={3}></Counter>*/}
-            {/*/!*<Feedback></Feedback>*!/*/}
-            {/*<Anecdotes></Anecdotes>*/}
-            {/*<RandomNum/>*/}
-            {/*<RollDice/>*/}
-            {/*<Lotto/>*/}
-            {/*<h1>Slot Machine</h1>*/}
-            {/*<Machine symOne={"X"} symTwo={"O"} symThree={"X"}/>*/}
-            {/*<Machine symOne={"X"} symTwo={"X"} symThree={"X"}/>*/}
-            {/*<Course></Course>*/}
-            {/*/!*<Person/>*!/*/}
-            {/*<FormElement/>*/}
-            {/*<Fontawesomes/>*/}
-            {/*<Pokedex/>*/}
-        </>
+            <>
+
+            </>
     );
 }
 

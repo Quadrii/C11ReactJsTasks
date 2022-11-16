@@ -13,7 +13,7 @@ const Boxx = ()=>{
     ]
     const [initialBox, setInitialBox] = useState(boxes)
     const addBox = (newBox)=>{
-        let createIt = [...boxes, newBox]
+        let createIt = [...initialBox, newBox]
         setInitialBox(createIt)
     }
     const remove =(id)=>{

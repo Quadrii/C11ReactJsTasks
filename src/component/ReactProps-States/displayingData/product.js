@@ -9,13 +9,30 @@ const Product = ()=>{
         { category: "Vegetables", price: "$4", stocked: false, name: "Pumpkin" },
         { category: "Vegetables", price: "$1", stocked: true, name: "Peas" }
     ]
-    const [products, setProducts] = useState(productJson)
+    const [isChecked, setIsChecked] = useState(false)
+    const [products] = useState(productJson)
+
+    const handleChange = (e) => {
+        setIsChecked(e.target.checked)
+    }
+
+    const render = ()=>{
+        let display;
+        if (isChecked) {
+            display =(
+                products.map(product =>
+                    product.stocked &&
+                    <DisplayProduct productName={product.name} productPrice={product.price}/>
+                )
+            )
+        }
+        return display;
+    }
+
     return (
         <>
-            {products.map(product =>
-                product.stocked  &&
-                    <DisplayProduct productName={product.name} productPrice={product.price}/>
-            )}
+            <input type="checkbox" checked={isChecked} placeholder="only show available products" onChange={handleChange}/>
+            {render()}
         </>
     )
 }

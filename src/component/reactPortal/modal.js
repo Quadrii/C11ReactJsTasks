@@ -2,6 +2,7 @@ import React, {useEffect, useRef} from "react";
 const Modal = (props)=>{
     const dialogRef = useRef()
     const lastActiveElement = useRef()
+
     useEffect(()=>{
         if (props.open){
             lastActiveElement.current=document.activeElement

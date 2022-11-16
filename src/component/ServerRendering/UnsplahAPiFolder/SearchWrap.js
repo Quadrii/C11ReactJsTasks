@@ -5,19 +5,19 @@ import ImageList from "./imageList";
 import ImageItem from "./imageItem";
 const SearchWrap = ()=>{
     const [searchTerm, setSearchTerm] = useState("office");
-    const [images, setImages]=useState([])
+    const [images, setImages] = useState([])
     const getSearchTerm = (term)=> {
         setSearchTerm(term)
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         const fetchPhotos = async ()=>{
             const result = await UnsplashApi.get(`search/photos/?query=${searchTerm}`);
             setImages(result.data.results)
             console.log(result.data.results)
         };
         fetchPhotos();
-    }, [searchTerm])
+    }, [searchTerm] )
     return(
         <>
             <Search getSearch={getSearchTerm}/>

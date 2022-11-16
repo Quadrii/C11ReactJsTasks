@@ -2,11 +2,13 @@ import React, {useState} from "react";
 import uuid from "react-uuid";
 import DisplayTasks from "./displayTasks";
 import AddNewTodo from "./addNewTodo";
+import UseTodoState from "./useTodoState";
+import useTodoState from "./useTodoState";
 const Todo =  ()=>{
     const todos = [
         {
             id:uuid(),
-            myTask:"write react",
+            myTask:"write reactjs",
             completed:false
         },
         {
@@ -15,36 +17,10 @@ const Todo =  ()=>{
             completed: false
         }
     ]
-    const [initialsTasks, setInitialsTasks] = useState(todos);
-    const updatedTodo = (id, update)=> {
-       let updatedTask = initialsTasks.map(initial=>
-       {
-               if(initial.id === id){
-                   return {...initial, myTask: update}
-               }
-               else {
-                   return  initial;
-               }
-        }
-
-       )
-       setInitialsTasks(updatedTask)
-    }
-
-    const deletedTask = (id)=>{
-        let deleteFunc = initialsTasks.filter(initial=>
-            initial.id !== id
-        )
-        setInitialsTasks(deleteFunc)
-    }
-    const addNewTodo = (task)=>{
-        let newTask = {...task, id:uuid()}
-        let copied = [newTask, ...todos]
-        setInitialsTasks(copied)
-    }
+    const {initials, updatedTodo, deletedTask, addNewTodo}=useTodoState(todos)
     return (
         <>
-            {initialsTasks.map(todo =>
+            {initials.map(todo =>
                 <DisplayTasks id={todo.id} task={todo.myTask} updated={updatedTodo} deleteTask={deletedTask}/>
             )}
             <AddNewTodo addNewChore={addNewTodo}/>
