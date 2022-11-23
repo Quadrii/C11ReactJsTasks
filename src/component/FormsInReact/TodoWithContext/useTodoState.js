@@ -31,6 +31,18 @@ export default initialsTasks => {
                 initial.id !== id
             )
             setInitials(deleteFunc)
+        },
+        toggleComplete: (id) => {
+            let status = initials.map(initial =>
+                {
+                    if (initial.id === id){
+                        return {...initial, completed: !initial.completed}
+                    }else{
+                        return initial;
+                    }
+                }
+            )
+            setInitials(status)
         }
     }
 

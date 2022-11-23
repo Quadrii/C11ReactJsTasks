@@ -22,7 +22,7 @@ import Note from "./component/FormsInReact/Notes/note";
 import NewCard from "./component/FormsInReact/CardClass/newCard";
 import Card from "./component/FormsInReact/CardClass/card";
 import Expense from "./component/FormsInReact/ExpenseTracker/expense";
-import Todo from "./component/FormsInReact/Todov2/todo";
+import Todo from "./component/FormsInReact/TodoWithContext/todo";
 import Search from "./component/ServerRendering/UnsplahAPiFolder/search";
 import {useState} from "react";
 import SearchWrap from "./component/ServerRendering/UnsplahAPiFolder/SearchWrap";
@@ -30,12 +30,23 @@ import User from "./component/ServerRendering/RandomUserGenerator/user";
 import SelectGender from "./component/ServerRendering/RandomUserGenerator/selectGender";
 import DisplayModal from "./component/reactPortal/displayModal";
 import Product from "./component/ReactProps-States/displayingData/product";
+import {TodoProvider} from "./component/FormsInReact/TodoWithContext/context/todoContext";
 
 function App() {
     return (
 
             <>
-
+                <TodoProvider>
+                    <Todo/>
+                </TodoProvider>
+                <Counter/>
+                <SearchWrap/>
+                <Product/>
+                <Box/>
+                <Feedback/>
+                <TodoList/>
+                <Machine/>
+                <Person/>
             </>
     );
 }

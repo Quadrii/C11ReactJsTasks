@@ -1,13 +1,16 @@
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import uuid from "react-uuid";
-const AddNewTodo = (props)=>{
+import {TodoContext} from "./context/todoContext";
+
+const AddNewTodo = ()=>{
+    const {addNewTodo} = useContext(TodoContext);
     const [newTodo, setNewTodo] = useState("")
     const handleNewTodo = (e)=>{
         setNewTodo(e.target.value)
     }
     const handleNewTodoForm = (e)=>{
         e.preventDefault()
-        props.addNewChore({id:uuid(), completed:false, myTask: newTodo})
+        addNewTodo({id:uuid(), completed:false, myTask: newTodo})
         setNewTodo("")
     }
     return (

@@ -1,8 +1,13 @@
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import Button from "../../ReactProps-States/button";
+import './todo.css';
+import {TodoContext} from "./context/todoContext";
 const DisplayTasks = (props)=>{
-    const [isEditing, setIsEditing] = useState(false)
-    const [newTask, setNewTask] = useState(props.task)
+    const {updatedTodo, deletedTask, toggleComplete} = useContext(TodoContext);
+    const [isEditing, setIsEditing] = useState(false);
+    const [newTask, setNewTask] = useState(props.task);
+    const [completed, setCompleted] = useState(false);
+
     const handleEdit = ()=>{
         setIsEditing(!isEditing)
     }
@@ -11,12 +16,19 @@ const DisplayTasks = (props)=>{
     }
     const handelEditSubmit = (e)=>{
         e.preventDefault()
-        props.updated(props.id, newTask)
+        updatedTodo(props.id, newTask)
         setNewTask("")
         setIsEditing(!isEditing)
     }
     const handleDelete = ()=>{
-        props.deleteTask(props.id)
+        deletedTask(props.id)
+    }
+
+    const handleToggle = () => {
+        toggleComplete(props.id)
+    }
+    const handleToggleChange = (e)=>{
+        setCompleted(e.target.check)
     }
     const render = ()=>{
         let display;
@@ -31,9 +43,10 @@ const DisplayTasks = (props)=>{
             display = (
                 <li>
                     <div>
-                        {props.task}
+                        <p className={props.completed ? "completed" : ""}>{props.task}</p>
                         <Button clicks={handleEdit} text="Edit"/>
                         <Button clicks={handleDelete} text="Delete"/>
+                        <input type="checkbox" title="completed" onChange={handleToggleChange} onClick={handleToggle}/>
                     </div>
                 </li>
             )
