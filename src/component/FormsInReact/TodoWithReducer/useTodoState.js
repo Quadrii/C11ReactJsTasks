@@ -32,7 +32,6 @@ export default initialsTasks => {
             )
             setInitials(deleteFunc)
         },
-
         toggleComplete: (id) => {
             let status = initials.map(initial =>
                 {
@@ -46,4 +45,5 @@ export default initialsTasks => {
             setInitials(status)
         }
     }
+
 }

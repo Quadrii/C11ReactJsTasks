@@ -31,11 +31,16 @@ import SelectGender from "./component/ServerRendering/RandomUserGenerator/select
 import DisplayModal from "./component/reactPortal/displayModal";
 import Product from "./component/ReactProps-States/displayingData/product";
 import {TodoProvider} from "./component/FormsInReact/TodoWithContext/context/todoContext";
+import TodoWithReducer from "./component/FormsInReact/TodoWithReducer/todoWithReducer";
+import {TodosProvider} from "./component/FormsInReact/TodoWithReducer/contexts/todoContext";
 
 function App() {
     return (
 
             <>
+                <TodosProvider>
+                    <TodoWithReducer/>
+                </TodosProvider>
                 <TodoProvider>
                     <Todo/>
                 </TodoProvider>
