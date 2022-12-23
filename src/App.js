@@ -16,7 +16,7 @@ import Box from "./component/ReactProps-States/box";
 import Form from "./component/FormsInReact/form";
 import Item from "./component/FormsInReact/FormPractise/item";
 import Boxx from "./component/FormsInReact/ColorBox/boxx";
-import TodoList from "./component/FormsInReact/TodoApp/TodoList";
+// import TodoList from "./component/FormsInReact/TodoApp/TodoList";
 import DeckCard from "./component/ServerRendering/DeckCard/deckCard";
 import Note from "./component/FormsInReact/Notes/note";
 import NewCard from "./component/FormsInReact/CardClass/newCard";
@@ -33,25 +33,29 @@ import Product from "./component/ReactProps-States/displayingData/product";
 import {TodoProvider} from "./component/FormsInReact/TodoWithContext/context/todoContext";
 import TodoWithReducer from "./component/FormsInReact/TodoWithReducer/todoWithReducer";
 import {TodosProvider} from "./component/FormsInReact/TodoWithReducer/contexts/todoContext";
-
+// import {Provider} from "react-redux";
+// import store from "./component/FormsInReact/TodoWithRedux/store";
+// import Todos from "./component/FormsInReact/TodoWithRedux/todos";
 function App() {
     return (
-
             <>
-                <TodosProvider>
-                    <TodoWithReducer/>
-                </TodosProvider>
-                <TodoProvider>
-                    <Todo/>
-                </TodoProvider>
-                <Counter/>
-                <SearchWrap/>
-                <Product/>
-                <Box/>
-                <Feedback/>
-                <TodoList/>
-                <Machine/>
-                <Person/>
+                {/*<Provider store={store}>*/}
+                {/*    <Todos/>*/}
+                {/*</Provider>*/}
+                <Expense/>
+                {/*<TodosProvider>*/}
+                {/*    <TodoWithReducer/>*/}
+                {/*</TodosProvider>*/}
+                {/*<TodoProvider>*/}
+                {/*    <Todo/>*/}
+                {/*</TodoProvider>*/}
+                {/*<Counter/>*/}
+                {/*<SearchWrap/>*/}
+                {/*<Product/>*/}
+                {/*<Box/>*/}
+                {/*<Feedback/>*/}
+                {/*<Machine/>*/}
+                {/*<Person/>*/}
             </>
     );
 }

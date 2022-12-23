@@ -5,12 +5,12 @@ import todoReducer from "../reducer/todoReducer";
 const todos = [
     {
         id:uuid(),
-        myTask:"write reactjssss",
+        myTask:"walk the dog",
         completed:false
     },
     {
         id:uuid(),
-        myTask: "write angular",
+        myTask: "Do some laundry",
         completed: false
     }
 ]
@@ -19,7 +19,7 @@ export const TodoContext = createContext();
 export const DispatchContext = createContext();
 
 export function TodosProvider(props) {
-    const [initials, dispatch] = useReducer(todoReducer ,todos)
+    const [initials, dispatch] = useReducer(todoReducer, todos)
     return (
         <TodoContext.Provider value={initials}>
             <DispatchContext.Provider value={dispatch}>
@@ -28,3 +28,4 @@ export function TodosProvider(props) {
         </TodoContext.Provider>
     )
 }
+

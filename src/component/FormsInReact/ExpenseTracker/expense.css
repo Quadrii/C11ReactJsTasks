@@ -1,0 +1,31 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.exp-wrap {
+    margin: 10px;
+    padding: 10px;
+    font-size: 20px;
+}
+.expInfo {
+    padding: 3px;
+}
+.tracker {
+    font-weight: bolder;
+    color: goldenrod;
+    font-size: 50px;
+}
+.exp-input {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 3px;
+    border: 1px solid #282c34;
+}
+.exp-button {
+    padding: 15px;
+    width: 100px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
